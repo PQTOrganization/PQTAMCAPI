@@ -1,0 +1,34 @@
+nugget Packages:
+Microsoft.AspNetCore.DataProtection.Entity
+Microsoft.AspNetCore.DataProtection.Extensions
+Microsoft.AspNetCore.Identity.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.VisualStudio.Web.CodeGeneration.Design
+Oracle.EntityFrameworkCore
+Oracle.ManagedDataAccess.Core
+
+
+Add-Migration init 	- 	create migration file with name init
+update-database		-	update Database
+
+program.cs:
+
+//UseOracleSQLCompatibility when issues in syntax of generated Migration file.
+
+builder.Services.AddDbContext<BasicAppContext>(options => options.UseOracle(
+    connStr, 
+    b =>    b.UseOracleSQLCompatibility("11")
+));
+
+builder.Services.AddDataProtection().PersistKeysToDbContext<BasicAppContext>();
+
+
+Context.cs
+// ORA-00972: identifier is too long
+modelBuilder.Model.SetMaxIdentifierLength(30);
+
+
+
+//ORA-00955: name is already used by an existing object
+delete seq from sql developer

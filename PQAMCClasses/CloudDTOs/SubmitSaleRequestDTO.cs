@@ -1,0 +1,83 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PQAMCClasses.CloudDTOs
+{
+    public class SubmitSaleRequestDTO
+    {
+        public string folioType { get; set; } = string.Empty;
+        public string salutation { get; set; } = string.Empty;
+        public string title { get; set; } = string.Empty;
+        public string fatherName { get; set; } = string.Empty;
+        public string motherName { get; set; } = string.Empty;
+        public string principleCnic { get; set;} = string.Empty;
+        public string cnicIssueDate { get;set;} = string.Empty;
+        public string principleCnicExpiryDate { get;set; } = string.Empty;
+        public string lifeTime { get; set; } = string.Empty;
+        public string dateOfBirth { get; set; } = string.Empty;
+        public string minor { get; set; } = string.Empty;
+        public string placeOfBirth { get; set; } = string.Empty;
+        public string gender { get; set;} = string.Empty;
+        public string guardianName { get; set; } = string.Empty;
+        public string relationWithMinor { get;set; } = string.Empty;
+        public string guardianCnic { get; set;} = string.Empty;
+        public string guardianCnicIssueDate { get; set; } = string.Empty;
+        public string guardianCnicExpiryDate { get; set; } = string.Empty;
+        public string guardianCnicAllowNull { get; set; } = string.Empty;
+        public string occupation { get; set; } = string.Empty;
+        public string residentialStatus { get; set; } = string.Empty;
+        public string sourceOfIncome { get; set; } = string.Empty;
+        public string nameOfEmployer { get; set;} = string.Empty;
+        public string zakatStatus { get; set; } = string.Empty;
+        public string dividendPayout { get; set;} = string.Empty;
+        public string retirementAge { get; set; } = string.Empty; 
+        public string mailingAddress1 { get; set; } = string.Empty;
+        public string mailingAddress2 { get; set; } = string.Empty;
+        public string mailingCity { get; set; } = string.Empty;
+        public string mailingCountry { get; set; } = string.Empty;
+        public string address1 { get; set; } = string.Empty;
+        public string address2 { get; set; } = string.Empty;
+        public string city { get; set; } = string.Empty;
+        public string country { get; set; } = string.Empty;
+        public string mobCountryCode { get; set; } = string.Empty;
+        public string mobCityCode { get; set; } = string.Empty;
+        public string mobileNumber { get; set; } = string.Empty;
+        public string phnCountryCode { get; set; } = string.Empty;
+        public string phnCityCode { get; set; } = string.Empty;
+        public string phnNumber { get; set; } = string.Empty;
+        public string email { get; set; } = string.Empty;
+        public string nomineeName { get; set; } = string.Empty;
+        public string nomineePhnNumber { get; set; } = string.Empty;
+        public string iban { get; set; } = string.Empty;
+        public string additionalDisclosurePEP { get; set; } = string.Empty;
+        public string additionalDisclosurePosition { get; set; } = string.Empty;
+        public string vpsFundId { get;set; } = string.Empty;
+        public string seq { get; set; } = string.Empty;
+        public string planFundId { get; set; } = string.Empty;
+        public string equitySubFund { get; set; } = string.Empty;
+        public string debtSubFund { get; set; } = string.Empty;
+        public string mmSubFund { get; set; } = string.Empty;
+        public string grossSaleAmount { get; set; } = string.Empty;
+        public string instrumentType { get; set; } = string.Empty;
+        public string instrumentNumber { get; set; } = string.Empty;
+        public string bankId { get; set; } = string.Empty;
+        public string branchId { get; set; } = string.Empty;
+        public string isRealized { get; set;} = string.Empty;
+        public string investmentProofUpload { get; set;} = string.Empty;
+        //public string conversionInTermsOf { get; set; } = string.Empty;
+        //public string paymentMode { get; set; } = string.Empty;
+        //public string allUnits { get; set; } = string.Empty;
+        //public string redemptionInTermsOf { get; set; } = string.Empty;
+        public string formReceivingDateTime { get; set; } = string.Empty;
+        public string accountNumber { get; set; } = string.Empty;
+        //public string maritalStatus { get; set; } = string.Empty;
+        public string reserved1 { get; set; } = string.Empty;
+        public string reserved2 { get; set; } = string.Empty;
+        public string reserved3 { get; set; } = string.Empty;
+        public string reserved4 { get; set; } = string.Empty;
+        public string reserved5 { get; set; } = string.Empty;
+    }
+}

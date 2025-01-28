@@ -1,0 +1,115 @@
+﻿@model PQAMCClasses.DTOs.InvestmentRequestDTO
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .body {
+            font-size: 1em;
+        }
+
+        .main {
+            padding-left: 16px;
+            padding-right: 16px;
+            display: block;
+            width: 100%;
+        }
+
+        .sectionhead {
+            background-color: #cdcdcd;
+            font-weight: bold;
+        }
+
+        .col1 {
+            font-weight: bold;
+            width: 30%;
+        }
+
+        .col2 {
+            width: 70%;
+        }
+
+        .datatable {
+            margin-top: 16px;
+            width: 100%;
+            border: 1px solid #00000;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        Dear Investor,<br />
+        As-salamu alaykum<br />
+
+        <p>
+            Your investment request for the @Model.FundName has been successfully submitted via PQAMC mobile app.
+            It may take up to 72 hours, or time stated as per Offering Document of the Fund,
+            for processing of this transaction.
+        </p>
+
+        <p>Your transaction details are as follows:</p>
+        <table class="datatable">
+            <tr>
+                <td class="col1">Folio Number:</td>
+                <td class="col2">@PQAMCClasses.Globals.GetFolioNumber(Model.FolioNumber)</td>
+            </tr>
+            <tr>
+                <td class="col1">Name of Investor:</td>
+                <td class="col2">@Model.UserName</td>
+            </tr>
+            <tr>
+                <td class="col1">Request Type:</td>
+                <td class="col2">Investment</td>
+            </tr>
+            <tr>
+                <td class="col1">Invested Fund:</td>
+                <td class="col2">@Model.FundName</td>
+            </tr>
+            <tr>
+                <td class="col1">Investment Amount:</td>
+                <td class="col2">@String.Format("{0:#,#.00}", Math.Round(@Model.InvestmentAmount, 2))</td>
+            </tr>
+            <tr>
+                <td class="col1">Date:</td>
+                <td class="col2">@Model.RequestDate.ToString("dd-MMM-yyyy hh:mm tt")</td>
+            </tr>
+            <tr>
+                <td class="col1">Transaction ID:</td>
+                <td class="col2">@Model.OnlinePaymentReference</td>
+            </tr>
+        </table>
+
+        <p>
+            If you have not processed this transaction, please immediately contact our Investor Relations Department.
+            The updated account statement will be sent to your registered email.
+        </p>
+        <p>
+            Our customers are our most valuable asset. It will be a pleasure for us to help you with any query or
+            information that you may require. We are available from 9:00 AM to 5:00 PM (Monday to Friday).
+            Please feel free to contact us on:
+        </p>
+        UAN: (021) 111-PQAMCL (772625)<br />
+        WhatsApp: +92 312 0080366<br />
+        Email: info@pqamcl.com<br />
+
+        <p>
+            Thank you for choosing Pak-Qatar Asset Management Company Limited, which is a part of Pak-Qatar Group,
+            Pakistan’s premier and pioneer Islamic financial services group.
+        </p>
+
+        <p>
+            As an integral part of our group, we take immense pride in providing a diverse range of Islamic financial
+            solutions. Through our group entities, Pak-Qatar General Takaful and Pak-Qatar Family Takaful, we offer
+            General and Family Takaful products, covering protection and health needs of individual and corporate.
+            This seamless integration strengthens our commitment to delivering a comprehensive suite of Shariah
+            compliant Islamic offerings to cater to your every need.
+        </p>
+
+        Regards,<br />
+
+        Investor Relations Department<br />
+
+        A Pak-Qatar group Company: Pakistan’s premier and pioneer Islamic financial services group.
+    </div>
+</body>
+</html>

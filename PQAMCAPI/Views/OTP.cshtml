@@ -1,0 +1,45 @@
+﻿@model PQAMCAPI.Models.User
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .body {
+            font-size: 1em;
+        }
+
+        .main {
+            padding-left: 16px;
+            padding-right: 16px;
+            display: block;
+        }
+
+        .col1 {
+            font-weight: bold;
+            width: 30%;
+        }
+
+        .col2 {
+            width: 70%;
+        }
+
+        .datatable {
+            margin-top: 16px;
+            width: 100%;
+            border: 1px solid #00000;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <p>Dear Customer</p>
+        <p>Your Pak-Qatar AMC app access details:</p>
+        <table class="datatable">
+            <tr>
+                <td class="col1">OTP:</td>
+                <td class="col2">@Model.OTP</td>
+            </tr>        
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+﻿@model PQAMCClasses.DTOs.RedemptionRequestDTO
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .body {
+            font-size: 1em;
+        }
+
+        .main {
+            padding-left: 16px;
+            padding-right: 16px;
+            display: block;
+            width: 100%;
+        }
+
+        .sectionhead {
+            background-color: #cdcdcd;
+            font-weight: bold;
+        }
+
+        .col1 {
+            font-weight: bold;
+            width: 30%;
+        }
+
+        .col2 {
+            width: 70%;
+        }
+
+        .datatable {
+            margin-top: 16px;
+            width: 100%;
+            border: 1px solid #00000;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <p>A new redemption request has been received with following details:</p>
+        <table class="datatable">
+            <tr>
+                <td class="col1">Request Date:</td>
+                <td class="col2">@Model.RequestDate.ToString("dd-MMM-yyyy hh:mm tt")</td>
+            </tr>
+            <tr>
+                <td class="col1">User Name:</td>
+                <td class="col2">@Model.UserName</td>
+            </tr>
+            <tr>
+                <td class="col1">Folio Number:</td>
+                <td class="col2">@PQAMCClasses.Globals.GetFolioNumber(Model.FolioNumber)</td>
+            </tr>
+            <tr>
+                <td class="col1">Fund:</td>
+                <td class="col2">@Model.FundName</td>
+            </tr>
+            <tr>
+                <td class="col1">Redemption Amount:</td>
+                <td class="col2">@String.Format("{0:#,#.00}", Math.Round(@Model.RedemptionAmount, 2))</td>
+            </tr>
+@*            <tr>
+                <td class="col1">Bank ID:</td>
+                <td class="col2">@Model.BankID</td>
+            </tr>
+            <tr>
+                <td class="col1">Bank Account No:</td>
+                <td class="col2">@Model.BankAccountNo</td>
+            </tr>
+*@            <tr>
+                <td class="col1">Nav Applied:</td>
+                <td class="col2">@Math.Round(@Model.NavApplied, 4).ToString()</td>               
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

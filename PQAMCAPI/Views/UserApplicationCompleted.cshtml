@@ -1,0 +1,434 @@
+﻿@model PQAMCClasses.DTOs.UserApplicationEmailDTO
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .body {
+            font-size: 1em;
+        }
+
+        .main {
+            padding-left: 16px;
+            padding-right: 16px;
+            display: block;
+        }
+
+        .col1 {
+            font-weight: bold;
+            width: 30%;
+        }
+
+        .col2 {
+            width: 70%;
+        }
+
+        .datatable {
+            margin-top: 16px;
+            width: 100%;
+            border: 1px solid #00000;
+        }
+        .heading {
+            font-size:30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <p>Dear User</p>
+        <p>A new User Application has been completed:</p>
+        <p class="heading">Digital Account Opening</p>
+        <table class="datatable">
+            <tr>
+                <td class="col1">Folio Type</td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">Web Transaction ID</td>
+                <td class="col2">-</td>
+            </tr>  
+            <tr>
+                <td class="col1">Name</td>
+                <td class="col2">@Model.Name</td>
+            </tr>
+            <tr>
+                <td class="col1">DOB</td>
+                <td class="col2">@Model.DateOfBirth?.ToString(PQAMCClasses.Globals.Constants.DateFormat)</td>
+            </tr>
+            <tr>
+                <td class="col1">Principal CNIC#</td>
+                <td class="col2">@Model.CNIC</td>
+            </tr>
+            <tr>
+                <td class="col1">CNIC Expiry LifeTime</td>
+                <td class="col2">@((bool)Model.IsCNICLifeTime ? "Yes" : "No")</td>
+            </tr>
+            <tr>
+                <td class="col1">CNIC Expiry Date</td>
+                <td class="col2">@Model.CNICExpiryDate?.ToString(PQAMCClasses.Globals.Constants.DateFormat)</td>
+            </tr>
+            <tr>
+                <td class="col1">CNIC Issuance Date</td>
+                <td class="col2">@Model.CNICIssueDate?.ToString(PQAMCClasses.Globals.Constants.DateFormat)</td>
+            </tr>
+            <tr>
+                <td class="col1">Father / Husband Name</td>
+                <td class="col2">@Model.FatherHusbandName</td>
+            </tr>
+            <tr>
+                <td class="col1">Mother Maiden Name</td>
+                <td class="col2">@Model.MotherMaidenName</td>
+            </tr>
+            <tr>
+                <td class="col1">Minor</td>
+                <td class="col2">No</td>
+            </tr>
+            <tr>
+                <td class="col1">Relation with Minor</td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">Guardian Name</td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">Guardian CNIC#</td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">Guardian CNIC Issuance Date</td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">Guardian CNIC Expiry Life Time</td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">Guardian CNIC Expiry Date</td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">Permanent Address</td>
+                <td class="col2">@Model.ResidentialAddress</td>
+            </tr>
+            <tr>
+                <td class="col1">Permanent City</td>
+                <td class="col2">@Model.CityOfResidence</td>
+            </tr>
+            <tr>
+                <td class="col1">Permanent Country</td>
+                <td class="col2">@Model.CountryOfResidence</td>
+            </tr>
+            <tr>
+                <td class="col1">Mailing Address</td>
+                <td class="col2">@Model.MailingAddress</td>
+            </tr>
+            <tr>
+                <td class="col1">Mailing City</td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">Mailing Country</td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">Ownership of your mobile number</td>
+                <td class="col2">@Model.ContactOwnershipName</td>
+            </tr>
+            <tr>
+                <td class="col1">Mobile No.</td>
+                <td class="col2">@Model.MobileNumber</td>
+            </tr>
+            <tr>
+                <td class="col1">Phone No.</td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">Email</td>
+                <td class="col2">@Model.EmailAddress</td>
+            </tr>
+            <tr>
+                <td class="col1">Occupation</td>
+                <td class="col2">@Model.OccupationName</td>
+            </tr>
+            <tr>
+                <td class="col1">Source of Income</td>
+                <td class="col2">@Model.SourceOfIncomeName</td>
+            </tr>
+            <tr>
+                <td class="col1">Zakat Status</td>
+                <td class="col2">@Model.ZakatStatus</td>
+            </tr>
+            <tr>
+                <td class="col1">Kin Name</td>
+                <td class="col2">@Model.NextOfKinName</td>
+            </tr>
+            <tr>
+                <td class="col1">Kin Contact Number</td>
+                <td class="col2">@Model.NextOfKinMobileNumber</td>
+            </tr>
+            <tr>
+                <td class="col1">IBAN / Wallet Number</td>
+                <td class="col2">@Model.IBANNumber</td>
+            </tr>
+            <tr>
+                <td class="col1">Bank / Wallet Name</td>
+                <td class="col2">@Model.BankName</td>
+            </tr>
+            <tr>
+                <td class="col1">Dividend Payout</td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">Name of Employer / Business</td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">Gender</td>
+                <td class="col2">@Model.GenderName</td>
+            </tr>
+            <tr>
+                <td class="col1">Residential Status</td>
+                <td class="col2">@Model.ResidentialStatusName</td>
+            </tr>
+        </table>
+        <p class="heading">Know Your Customer</p>
+        <table class="datatable">
+            <tr>
+                <td class="col1">Name</td>
+                <td class="col2">@Model.Name</td>
+            </tr>
+            <tr>
+                <td class="col1">CNIC#</td>
+                <td class="col2">@Model.CNIC</td>
+            </tr>
+            <tr>
+                <td class="col1">Age</td>
+                <td class="col2">@Model.Age</td>
+            </tr>
+            <tr>
+                <td class="col1">DOB</td>
+                <td class="col2">@Model.DateOfBirth?.ToString(PQAMCClasses.Globals.Constants.DateFormat)</td>
+            </tr>
+            <tr>
+                <td class="col1">Marital Status</td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">No. of Dependents</td>
+                <td class="col2">0</td>
+            </tr>
+            <tr>
+                <td class="col1">Occupation</td>
+                <td class="col2">@Model.OccupationName</td>
+            </tr>
+            <tr>
+                <td class="col1">Education</td>
+                <td class="col2">@Model.EducationName</td>
+            </tr>
+            <tr>
+                <td class="col1">Source of Income</td>
+                <td class="col2">@Model.SourceOfIncomeName</td>
+            </tr>
+            <tr>
+                <td class="col1">Approximate Annual Income</td>
+                <td class="col2">@Model.AnnualIncomeName</td>
+            </tr>
+            <tr>
+                <td class="col1">
+                    Expected Investment transaction in a
+                    year
+                </td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">Expected Investment per transaction</td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">
+                    Has any Financial Institution ever
+                    refused to open your account?
+                </td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">
+                    Are you holding a senior position in
+                    any government institution or Political
+                    Party (PEP)?
+                </td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">
+                    Do you have any financial links to
+                    offshore Tax havens?
+                </td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">
+                    Do you deal in high value items such
+                    as Gold, Silver or Precious Metals /
+                    Stones?
+                </td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">
+                    Ultimate beneficiary of In
+                    different from investor)
+                </td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">Ultimate Beneficiary Name</td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">Ultimate Beneficiary CNIC</td>
+                <td class="col2">-</td>
+            </tr>
+        </table>       
+        <p class="heading">FATCA Form</p>
+        <table class="datatable">
+            <tr>
+                <td class="col1">Account Title</td>
+                <td class="col2">@Model.OneLinkTitle</td>               
+            </tr>
+            <tr>
+                <td class="col1">CNIC/NICOP</td>
+                <td class="col2">@Model.CNIC</td>
+            </tr>
+            <tr>
+                <td class="col1">
+                    Country of Tax Residence Other than
+                    Pakistan
+                </td>
+                <td class="col2">@Model.CountryOfTaxName</td>
+            </tr>
+            <tr>
+                <td class="col1">Place of Birth - City</td>
+                <td class="col2">@Model.CityOfBirth</td>
+            </tr>
+            <tr>
+                <td class="col1">Place of Birth - Country</td>
+                <td class="col2">@Model.CountryOfBirth</td>
+            </tr>
+            <tr>
+                <td class="col1">Passport</td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">US Taxpayer Identification Number</td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">
+                    Are you a US citizen?
+                </td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">Are you a US resident?</td>
+                <td class="col2">@Model.USResident</td>
+            </tr>
+            <tr>
+                <td class="col1">
+                    Do you hold a US permanent resident
+                    card (Green card)?
+                </td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">
+                    Were you born in USA?
+                </td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">
+                    Standing instructions to transfer funds
+                    to an account maintained in USA?
+                </td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">
+                    Do you have any power of
+                    Attorney/Authorized
+                    Signatory/Mandate Holder having US
+                    address?
+                </td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">
+                    Do you have US
+                    residence/mailing/Sole Hold Mail
+                    address?
+                </td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">
+                    Do you have US Telephone number?
+                </td>
+                <td class="col2">-</td>
+            </tr>
+        </table>
+        <p class="heading">CRS Form</p>
+        <table class="datatable">
+            <tr>
+                <td class="col1">Country of Tax Residence</td>
+                <td class="col2">@Model.CountryOfTaxName</td>               
+            </tr>
+            <tr>
+                <td class="col1">Select</td>
+                <td class="col2">-</td>
+            </tr>
+            <tr>
+                <td class="col1">
+                    TIN No / Explanation
+                </td>
+                <td class="col2">@Model.TINNumber</td>
+            </tr>
+          </table>
+          <p class="heading">Undertaking</p>
+          <p>
+              <ul>
+                <li>
+                    I hereby confirm that all information provided in this Online application is true and correct to the best of
+                    my knowledge. I agree that I shall assume sole responsibility for determining the merits or suitability of any
+                    and all advice and /or recommendations of PQAMCL before relying on the same to enter into any
+                    transaction. I will not hold PQAMCL responsible for any loss which may occur as a result of my decision. I
+                    further confirm that I have read the Trust Deeds, Offering Documents, Supplemental Trust Deeds and
+                    Supplemental Offering Documents that govern these Investment transactions. I understand the features and
+                    risks of the product in which I am investing. I also confirm having the knowledge of applicable load
+                    percentages, transaction cost, price adjustment charges and government taxes where applied.
+                </li>
+                <li>
+                    I hereby assure to the Management Company that the proceeds invested in the Fund(s) are not derived
+                    from money laundering or illegal activities and the source of funds declared in the Form is true and correct
+                    to the best of my knowledge and belief.
+                </li>
+                <li>
+                     I declare that I understand that this risk profiling questionnaire will help me assess my risk appetite based
+on the information provided by me. I am aware that my financial needs may change over time depending on
+my personal and situation objectives. I also understand that this questionnaire does not constitute, in any
+manner, advice given by the Company. I shall be solely responsible for all my current and future investment,
+conversion and transfer transactions if these transactions are not in accordance with my above-mentioned
+risk profiling results, I will not hold the Company liable or responsible for these transactions in any manner.
+Further, I hereby confirm that all information provided in this form is true to the best of my knowledge.
+                </li>
+                <li>
+                    I do hereby confirm that the investment being made is solely my own funds and that the funds beneficially
+                    owned by other person(s) will not be used unless otherwise declared by me in this application
+                </li>
+              </ul>
+          </p>
+    </div>
+</body>
+</html>
