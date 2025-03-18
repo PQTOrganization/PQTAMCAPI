@@ -55,6 +55,9 @@ namespace Services
 
         private async Task SendMessageToGateway(string MobileNumber, string Message)
         {
+            if (_smsSettings.Disabled)
+                return;
+
             string RequestUrl = "http://172.16.6.19:8080/SMSService.aspx?UserId=" + _smsSettings.UserId + 
                                 "&Password=" + _smsSettings.Password + "&MobileNo=" + MobileNumber + 
                                 "&Message=" + Message;

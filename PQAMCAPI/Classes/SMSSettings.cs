@@ -5,5 +5,6 @@
         public string UserId { get; set; } = "";
         public string Password { get; set; } = "";
         public string TestingNumber { get; set; } = "";
+        public bool Disabled { get; set; } = false;
     }
 }
