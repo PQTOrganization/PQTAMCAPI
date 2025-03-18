@@ -79,6 +79,7 @@ namespace PQAMCAPI.Controller
             return await _service.GetVPSPlanSequence();
         }
 
+        [AllowAnonymous]
         [HttpGet("FetchAccountStatement")]
         public async Task<ActionResult<string>> Get()
         {
